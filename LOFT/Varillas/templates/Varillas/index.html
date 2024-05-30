@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+{% block titulo %}
+    Varillas
+{% endblock titulo %}
+
+{% block contenido %}
+    {% for Ventas in Venta %}
+        <h3>{{Venta.nombre}}</h3>
+        <h1>{{Venta.vendedor}} | {{Venta.cliente}} | {{Venta.varilla}}</h1>
+    {% endfor %}
+{% endblock contenido %}
