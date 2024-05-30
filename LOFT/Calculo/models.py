@@ -7,12 +7,9 @@ def precio_con_impuesto(precio):
 
 
 
-def total_con_impuesto(self):
-    total_varillas = sum(varilla.precio_con_impuesto() * 5 for varilla in self.varilla.all())
-    return total_varillas * 5
-        
 
+    # def total_con_impuesto(self):
+    #     perimetro = self.calcular_perimetro()
+    #     total_varilla = self.varilla.precio_con_impuesto() * perimetro if self.varilla else 0
+    #     return total_varilla
 
-def __str__(self):
-    total = self.total_venta()
-    return f"Venta {self.nombre} - Cliente: {self.cliente} - Total: ${total:.2f}"
