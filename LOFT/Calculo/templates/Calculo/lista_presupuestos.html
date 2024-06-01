@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Presupuestos</title>
+</head>
+<body>
+    <h1>Lista de Presupuestos</h1>
+    <a href="{% url 'Calculo:crear_presupuesto' %}">Crear Nuevo Presupuesto</a>
+    <a href="{% url 'Calculo:borrar_todos_presupuestos' %}">Borrar Todos los Presupuestos</a>
+    <a href="{% url 'Calculo:enviar_todos_a_venta' %}">Guardar Venta</a>
+    <a href="{% url 'Varillas:index' %}">Ir a Ventas</a>
+
+    <ul>
+        {% for presupuesto in presupuestos %}
+            <li>
+                <h1>Presupuesto</h1>
+                <P>Cliente: {{ presupuesto.cliente.nombre }} {{ presupuesto.cliente.apellido }} </P>
+                <p>Contacto: {{ presupuesto.cliente.contacto }} </p>
+                <p>Descripción: Varilla: {{ presupuesto.varilla.nombre }} | Material: {{ presupuesto.material.nombre }} | Color: {{ presupuesto.color.nombre }}</p>
+                <p>Total: ${{ presupuesto.total_con_impuesto|floatformat:2  }}</p>
+                            
+                <a href="{% url 'Calculo:ver_presupuesto' presupuesto.pk %}">Ver</a>
+                <a href="{% url 'Calculo:enviar_a_venta' presupuesto.pk %}">Enviar a Venta</a>
+                <a href="{% url 'Calculo:borrar_presupuesto' presupuesto.pk %}">Borrar</a>
+                
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

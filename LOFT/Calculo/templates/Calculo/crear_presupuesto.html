@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Presupuesto</title>
+</head>
+<body>
+    <h1>Crear Presupuesto</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Crear</button>
+    </form>
+    <p>¿Nuevo cliente? <a href="{% url 'Calculo:cliente_nuevo' %}">Agregar nuevo cliente</a></p>
+    <a href="{% url 'Calculo:cliente_nuevo' %}">Agregar Nuevo Cliente</a>
+</body>
+</html>

@@ -6,6 +6,7 @@
 
 {% block contenido %}
     <div>
-        <a href="{{% url 'Varillas:index' %}}">Ir a Varillas</a>
+        <a href="{% url 'Varillas:index' %}">Ir a Varillas</a>
+        <a href="{% url 'Calculo:lista_presupuestos' %}">Ir a Presupuesto</a>
     </div>
 {% endblock contenido %}

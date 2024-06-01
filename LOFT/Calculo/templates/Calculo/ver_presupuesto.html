@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ver Presupuesto</title>
+</head>
+<body>
+    <h1>Presupuesto {{ presupuesto.pk }}</h1>
+    <P>Cliente: {{ presupuesto.cliente.nombre }} {{ presupuesto.cliente.apellido }} </P>
+    <p>Contacto: {{ presupuesto.cliente.contacto }} </p>
+    <p>Descripción: Varilla: {{ presupuesto.varilla.nombre }} | Material: {{ presupuesto.material.nombre }} | Color: {{ presupuesto.color.nombre }}</p>
+    <p>Total: ${{ presupuesto.total_con_impuesto|floatformat:2  }}</p>
+
+  
+
+    <a href="{% url 'Calculo:crear_presupuesto' %}">Añadir nuevo presupuesto</a>
+    <a href="{% url 'Calculo:borrar_presupuesto' presupuesto.pk %}">Borrar este presupuesto</a>
+    <a href="{% url 'Calculo:enviar_a_venta' presupuesto.pk %}">Enviar a venta</a>
+    <a href="{% url 'Calculo:lista_presupuestos' %}">Volver a la lista</a>
+</body>
+</html>
